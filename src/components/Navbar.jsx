@@ -1,10 +1,19 @@
+import {Link} from "react-router-dom";
+import useAuth from "../hooks/useAuth";
+// import {LuUserCircle} from "react-icons/lu";
+
 const Navbar = () => {
+  const {user} = useAuth();
+  console.log(user);
+
   return (
-    <div className="navbar h-20 bg-black md:px-44">
+    <div className="navbar h-20 bg-black md:px-44 shadow-lg fixed z-10">
       <div className="flex-1">
-        <h1 className="text-2xl text-[#04F300] font-semibold">
-          Khan<span className="text-orange-600">Gadgets</span>
-        </h1>
+        <Link to="/">
+          <h1 className="text-2xl text-[#04F300] font-semibold">
+            Khan<span className="text-orange-600">Gadgets</span>
+          </h1>
+        </Link>
       </div>
       <div className="flex-none gap-2">
         <div className="form-control">
@@ -20,12 +29,13 @@ const Navbar = () => {
             role="button"
             className="btn btn-ghost btn-circle avatar"
           >
-            <div className="w-10 rounded-full">
-              <img
-                alt="Tailwind CSS Navbar component"
-                src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.webp"
-              />
-            </div>
+            {/* <div className="w-10 rounded-full">
+              {user.photoURL ? (
+                <img src={user.photoURL} alt="image" />
+              ) : (
+                <LuUserCircle className="h-full w-full" />
+              )}
+            </div> */}
           </div>
           <ul
             tabIndex={0}
