@@ -1,10 +1,12 @@
 import {useState} from "react";
 import Select from "react-select";
 import UseAllProducts from "../hooks/UseAllProducts";
+import {CiSearch} from "react-icons/ci";
 
 const Category = () => {
   const [allProducts] = UseAllProducts();
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const [searchQuery, setSearchQuery] = useState("");
 
   const categories = Array.from(
     new Set(allProducts.map((res) => res.categoryName))
@@ -15,24 +17,32 @@ const Category = () => {
     label: category,
   }));
 
-  const filterProducts = selectedCategory
-    ? allProducts.filter(
-        (product) => product.categoryName === selectedCategory.value
-      )
-    : allProducts;
+  const filterProducts = allProducts.filter((product) => {
+    const matchesCategory = selectedCategory
+      ? product.categoryName === selectedCategory.value
+      : true;
+    const matchesSearchQuery = product.productName
+      .toLowerCase()
+      .includes(searchQuery.toLowerCase());
+    return matchesCategory && matchesSearchQuery;
+  });
 
   return (
     <div>
       <h1 className="text-center text-4xl font-semibold">Featured Product</h1>
       <div className="flex">
         <div className="w-1/3 pl-6">
-          <div className="search">
+          <div className="search relative">
             <input
-              className="p-4 border outline-none rounded-s-md text-slate-900"
+              className="p-4 w-72 border outline-none rounded-md text-slate-900"
               type="text"
               placeholder="search by product name"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
             />
-            <button className="p-4 border border-l-0">Search</button>
+            <button disabled className="absolute mt-4 ml-[-50px]">
+              <CiSearch className="text-3xl" />
+            </button>
           </div>
           <div className="category mt-3">
             <h4 className="text-xl font-semibold">Category</h4>
