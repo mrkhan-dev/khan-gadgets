@@ -1,7 +1,13 @@
+import Category from "../components/Category";
+import UseAllProducts from "../hooks/UseAllProducts";
+
 const Home = () => {
+  const [allProducts] = UseAllProducts();
+  console.log(allProducts);
+
   return (
     <div>
-      <p className="text-4xl text-center">homepage</p>
+      <Category />
     </div>
   );
 };

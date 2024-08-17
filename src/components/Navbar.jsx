@@ -1,10 +1,10 @@
 import {Link} from "react-router-dom";
 import useAuth from "../hooks/useAuth";
+import {LuUserCircle} from "react-icons/lu";
 // import {LuUserCircle} from "react-icons/lu";
 
 const Navbar = () => {
   const {user} = useAuth();
-  console.log(user);
 
   return (
     <div className="navbar h-20 bg-black md:px-44 shadow-lg fixed z-10">

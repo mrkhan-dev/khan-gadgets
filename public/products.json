@@ -1,0 +1,362 @@
+[
+  {
+    "productName": "iPhone 15 Pro Max - 256 GB - Blue Titanium",
+    "brandName": "Apple",
+    "categoryName": "Phones",
+    "price": 699.99,
+    "dateAdded": "2024-07-15",
+    "description": "Latest generation smartphone with 5G connectivity and advanced camera features.",
+    "image": "https://i.ibb.co/9p9VSHg/i-Phone-15-Pro-Max-Blue-Titanium-PDP-Image-Position-1-en-IN.jpg"
+  },
+  {
+    "productName": "Samsung Galaxy S24 Ultra - 256GB Titanium Violet - LitPhones",
+    "brandName": "Samsung",
+    "categoryName": "Phones",
+    "price": 999.99,
+    "dateAdded": "2024-08-01",
+    "description": "Flagship smartphone with a bezel-less display and top-tier performance.",
+    "image": "https://i.ibb.co/S3yfXF4/Samsung-Galaxy-S24-Ultra-Titanium-Black.jpg"
+  },
+  {
+    "productName": "Google Pixel 7 Pro (Obsidian, 128 GB)",
+    "brandName": "Google",
+    "categoryName": "Phones",
+    "price": 399.99,
+    "dateAdded": "2024-07-05",
+    "description": "Affordable smartphone with essential features and a compact design.",
+    "image": "https://i.ibb.co/KVnBPPP/original-imaggsuehy3nyj3b.jpg"
+  },
+  {
+    "productName": "Honor Magic 6 Pro 5G Smartphone (12/512GB)",
+    "brandName": "Honor",
+    "categoryName": "Phones",
+    "price": 749.99,
+    "dateAdded": "2024-07-25",
+    "description": "High-end smartphone with a large display and powerful processor.",
+    "image": "https://i.ibb.co/7YxZH1L/Honor-Magic-6-Pro-set-to-launch-in-India-soon-1716799494685-1716799494900.jpg"
+  },
+  {
+    "productName": "Xiaomi Redmi Note 13 Smartphone (6/128GB)",
+    "brandName": "Xiaomi",
+    "categoryName": "Phones",
+    "price": 849.99,
+    "dateAdded": "2024-07-10",
+    "description": "Professional-grade smartphone with advanced features and a sleek design.",
+    "image": "https://i.ibb.co/1vvSNDV/8a2729dc463d65b3e369e2c85a6c7b15.png"
+  },
+  {
+    "productName": "OnePlus 10T 5G Smartphone (16/256GB)",
+    "brandName": "OnePlus",
+    "categoryName": "Phones",
+    "price": 629.99,
+    "dateAdded": "2024-08-02",
+    "description": "Versatile smartphone with a powerful battery and dual-camera system.",
+    "image": "https://i.ibb.co/Wf32PkG/50596467-4a60-441b-9b30-a8f48bf7a07622040704-416x416.jpg"
+  },
+  {
+    "productName": "Vivo X80 5G Smartphone (12/256GB)",
+    "brandName": "Vivo",
+    "categoryName": "Phones",
+    "price": 299.99,
+    "dateAdded": "2024-07-20",
+    "description": "Compact smartphone with all the essential features and a durable build.",
+    "image": "https://i.ibb.co/J7NgdMv/vivo-x80-5g-128-gb-8-gb-ram-urban-blue-5.webp"
+  },
+  {
+    "productName": "OPPO Reno12 F Smartphone (8/256GB)",
+    "brandName": "OPPO",
+    "categoryName": "Phones",
+    "price": 549.99,
+    "dateAdded": "2024-08-08",
+    "description": "Slim and stylish smartphone with excellent performance and battery life.",
+    "image": "https://i.ibb.co/sHMLSpd/Oppo-Reno12-F-5-G-Dual-Sim-8-GB-RAM-256-GB-Black-Green.png"
+  },
+  {
+    "productName": "Wireless Earbuds",
+    "brandName": "SoundMagic",
+    "categoryName": "Earbuds",
+    "price": 59.99,
+    "dateAdded": "2024-08-01",
+    "description": "High-quality wireless earbuds with noise cancellation and long battery life.",
+    "image": "wireless_earbuds.jpg"
+  },
+  {
+    "productName": "Earbuds Pro",
+    "brandName": "AudioFlex",
+    "categoryName": "Earbuds",
+    "price": 99.99,
+    "dateAdded": "2024-07-15",
+    "description": "Premium wireless earbuds with superior sound quality and sweat resistance.",
+    "image": "earbuds_pro.jpg"
+  },
+  {
+    "productName": "Earbuds Lite",
+    "brandName": "EasySound",
+    "categoryName": "Earbuds",
+    "price": 39.99,
+    "dateAdded": "2024-07-20",
+    "description": "Affordable wireless earbuds with clear sound and compact design.",
+    "image": "earbuds_lite.jpg"
+  },
+  {
+    "productName": "Noise Cancelling Earbuds",
+    "brandName": "QuietTunes",
+    "categoryName": "Earbuds",
+    "price": 89.99,
+    "dateAdded": "2024-07-30",
+    "description": "Wireless earbuds with active noise cancellation and rich bass.",
+    "image": "noise_cancelling_earbuds.jpg"
+  },
+  {
+    "productName": "Sports Earbuds",
+    "brandName": "FitSound",
+    "categoryName": "Earbuds",
+    "price": 69.99,
+    "dateAdded": "2024-07-25",
+    "description": "Sweat-resistant earbuds with secure fit and powerful sound.",
+    "image": "sports_earbuds.jpg"
+  },
+  {
+    "productName": "True Wireless Earbuds",
+    "brandName": "FreedomSound",
+    "categoryName": "Earbuds",
+    "price": 79.99,
+    "dateAdded": "2024-08-05",
+    "description": "True wireless earbuds with touch controls and long battery life.",
+    "image": "true_wireless_earbuds.jpg"
+  },
+  {
+    "productName": "Bass Boost Earbuds",
+    "brandName": "DeepBass",
+    "categoryName": "Earbuds",
+    "price": 49.99,
+    "dateAdded": "2024-07-02",
+    "description": "Wireless earbuds with enhanced bass and clear sound.",
+    "image": "bass_boost_earbuds.jpg"
+  },
+  {
+    "productName": "Compact Earbuds",
+    "brandName": "MiniTunes",
+    "categoryName": "Earbuds",
+    "price": 29.99,
+    "dateAdded": "2024-06-30",
+    "description": "Compact and lightweight wireless earbuds with clear audio.",
+    "image": "compact_earbuds.jpg"
+  },
+  {
+    "productName": "Gaming Laptop",
+    "brandName": "PowerGamer",
+    "categoryName": "Laptops",
+    "price": 1299.99,
+    "dateAdded": "2024-08-05",
+    "description": "High-performance gaming laptop with the latest graphics card and fast refresh rate.",
+    "image": "gaming_laptop.jpg"
+  },
+  {
+    "productName": "UltraBook Pro",
+    "brandName": "TechLight",
+    "categoryName": "Laptops",
+    "price": 999.99,
+    "dateAdded": "2024-07-15",
+    "description": "Sleek ultrabook with high performance, long battery life, and lightweight design.",
+    "image": "ultrabook_pro.jpg"
+  },
+  {
+    "productName": "Workstation Laptop",
+    "brandName": "ProWork",
+    "categoryName": "Laptops",
+    "price": 1499.99,
+    "dateAdded": "2024-07-10",
+    "description": "Powerful workstation laptop designed for professionals with demanding workloads.",
+    "image": "workstation_laptop.jpg"
+  },
+  {
+    "productName": "Convertible Laptop",
+    "brandName": "FlexiTech",
+    "categoryName": "Laptops",
+    "price": 899.99,
+    "dateAdded": "2024-08-02",
+    "description": "2-in-1 convertible laptop with touch screen and 360-degree hinge.",
+    "image": "convertible_laptop.jpg"
+  },
+  {
+    "productName": "Budget Laptop",
+    "brandName": "ValueBook",
+    "categoryName": "Laptops",
+    "price": 499.99,
+    "dateAdded": "2024-07-05",
+    "description": "Affordable laptop with essential features for everyday use.",
+    "image": "budget_laptop.jpg"
+  },
+  {
+    "productName": "Gaming Laptop Pro",
+    "brandName": "ExtremeGamer",
+    "categoryName": "Laptops",
+    "price": 1599.99,
+    "dateAdded": "2024-07-25",
+    "description": "High-end gaming laptop with top-tier components and customizable RGB lighting.",
+    "image": "gaming_laptop_pro.jpg"
+  },
+  {
+    "productName": "Student Laptop",
+    "brandName": "EduTech",
+    "categoryName": "Laptops",
+    "price": 649.99,
+    "dateAdded": "2024-07-22",
+    "description": "Durable and lightweight laptop designed for students with essential software.",
+    "image": "student_laptop.jpg"
+  },
+  {
+    "productName": "Business Laptop",
+    "brandName": "ExecTech",
+    "categoryName": "Laptops",
+    "price": 1099.99,
+    "dateAdded": "2024-08-08",
+    "description": "Business laptop with security features and a professional design.",
+    "image": "business_laptop.jpg"
+  },
+  {
+    "productName": "Smartwatch Pro",
+    "brandName": "WristTech",
+    "categoryName": "Smartwatches",
+    "price": 199.99,
+    "dateAdded": "2024-06-30",
+    "description": "Advanced smartwatch with fitness tracking, GPS, and heart rate monitoring.",
+    "image": "smartwatch_pro.jpg"
+  },
+  {
+    "productName": "Fitness Smartwatch",
+    "brandName": "FitWrist",
+    "categoryName": "Smartwatches",
+    "price": 129.99,
+    "dateAdded": "2024-07-15",
+    "description": "Smartwatch focused on fitness with multiple sports modes and long battery life.",
+    "image": "fitness_smartwatch.jpg"
+  },
+  {
+    "productName": "Luxury Smartwatch",
+    "brandName": "EliteWrist",
+    "categoryName": "Smartwatches",
+    "price": 499.99,
+    "dateAdded": "2024-07-20",
+    "description": "High-end luxury smartwatch with a premium design and advanced features.",
+    "image": "luxury_smartwatch.jpg"
+  },
+  {
+    "productName": "Basic Smartwatch",
+    "brandName": "SimpleWatch",
+    "categoryName": "Smartwatches",
+    "price": 79.99,
+    "dateAdded": "2024-08-01",
+    "description": "Affordable smartwatch with essential features and a minimalist design.",
+    "image": "basic_smartwatch.jpg"
+  },
+  {
+    "productName": "Smartwatch Lite",
+    "brandName": "WristLight",
+    "categoryName": "Smartwatches",
+    "price": 99.99,
+    "dateAdded": "2024-07-05",
+    "description": "Lightweight smartwatch with basic fitness tracking and notification support.",
+    "image": "smartwatch_lite.jpg"
+  },
+  {
+    "productName": "Sports Smartwatch",
+    "brandName": "ActiveWrist",
+    "categoryName": "Smartwatches",
+    "price": 149.99,
+    "dateAdded": "2024-07-30",
+    "description": "Rugged smartwatch with GPS and multiple sports modes for athletes.",
+    "image": "sports_smartwatch.jpg"
+  },
+  {
+    "productName": "Hybrid Smartwatch",
+    "brandName": "TechFusion",
+    "categoryName": "Smartwatches",
+    "price": 179.99,
+    "dateAdded": "2024-07-25",
+    "description": "Smartwatch with a traditional analog look and smart features.",
+    "image": "hybrid_smartwatch.jpg"
+  },
+  {
+    "productName": "Smartwatch Max",
+    "brandName": "MegaWrist",
+    "categoryName": "Smartwatches",
+    "price": 229.99,
+    "dateAdded": "2024-07-10",
+    "description": "Feature-rich smartwatch with a large display and long battery life.",
+    "image": "smartwatch_max.jpg"
+  },
+  {
+    "productName": "Drone 3000",
+    "brandName": "FlyHigh",
+    "categoryName": "Drones",
+    "price": 499.99,
+    "dateAdded": "2024-07-20",
+    "description": "Advanced drone with 4K camera, GPS, and obstacle avoidance.",
+    "image": "drone_3000.jpg"
+  },
+  {
+    "productName": "Compact Drone",
+    "brandName": "MiniFly",
+    "categoryName": "Drones",
+    "price": 299.99,
+    "dateAdded": "2024-07-15",
+    "description": "Compact drone with HD camera and easy controls for beginners.",
+    "image": "compact_drone.jpg"
+  },
+  {
+    "productName": "Professional Drone",
+    "brandName": "ProFlyer",
+    "categoryName": "Drones",
+    "price": 899.99,
+    "dateAdded": "2024-08-01",
+    "description": "High-end drone for professional aerial photography and videography.",
+    "image": "professional_drone.jpg"
+  },
+  {
+    "productName": "Racing Drone",
+    "brandName": "SpeedFly",
+    "categoryName": "Drones",
+    "price": 399.99,
+    "dateAdded": "2024-07-05",
+    "description": "High-speed racing drone with first-person view (FPV) capabilities.",
+    "image": "racing_drone.jpg"
+  },
+  {
+    "productName": "Foldable Drone",
+    "brandName": "FlexiFly",
+    "categoryName": "Drones",
+    "price": 349.99,
+    "dateAdded": "2024-07-25",
+    "description": "Portable foldable drone with 4K camera and intuitive controls.",
+    "image": "foldable_drone.jpg"
+  },
+  {
+    "productName": "Drone Max",
+    "brandName": "AeroMax",
+    "categoryName": "Drones",
+    "price": 749.99,
+    "dateAdded": "2024-07-30",
+    "description": "Powerful drone with extended flight time and advanced stabilization.",
+    "image": "drone_max.jpg"
+  },
+  {
+    "productName": "Beginner Drone",
+    "brandName": "EasyFly",
+    "categoryName": "Drones",
+    "price": 199.99,
+    "dateAdded": "2024-07-22",
+    "description": "Easy-to-use drone designed for beginners with a simple interface.",
+    "image": "beginner_drone.jpg"
+  },
+  {
+    "productName": "Drone Lite",
+    "brandName": "LightFly",
+    "categoryName": "Drones",
+    "price": 249.99,
+    "dateAdded": "2024-08-05",
+    "description": "Lightweight drone with HD camera and real-time video streaming.",
+    "image": "drone_lite.jpg"
+  }
+]
