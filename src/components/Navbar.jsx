@@ -1,13 +1,14 @@
 import {Link} from "react-router-dom";
 import useAuth from "../hooks/useAuth";
-import {LuUserCircle} from "react-icons/lu";
+// import {LuUserCircle} from "react-icons/lu";
 // import {LuUserCircle} from "react-icons/lu";
 
 const Navbar = () => {
   const {user} = useAuth();
+  console.log(user?.displayName);
 
   return (
-    <div className="navbar h-20 bg-black md:px-44 shadow-lg fixed z-10">
+    <div className="navbar h-20 bg-black md:px-6 shadow-lg fixed z-10">
       <div className="flex-1">
         <Link to="/">
           <h1 className="text-2xl text-[#04F300] font-semibold">
@@ -16,13 +17,6 @@ const Navbar = () => {
         </Link>
       </div>
       <div className="flex-none gap-2">
-        <div className="form-control">
-          <input
-            type="text"
-            placeholder="Search"
-            className="input input-bordered w-24 md:w-auto"
-          />
-        </div>
         <div className="dropdown dropdown-end">
           <div
             tabIndex={0}

@@ -7,6 +7,7 @@ const Category = () => {
   const [allProducts] = UseAllProducts();
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
+  const [sortOrder, setSortOrder] = useState(null);
 
   const categories = Array.from(
     new Set(allProducts.map((res) => res.categoryName))
@@ -27,14 +28,40 @@ const Category = () => {
     return matchesCategory && matchesSearchQuery;
   });
 
+  // Sort products based on selected sort order
+  const sortProducts = (products) => {
+    if (sortOrder === "lowToHigh") {
+      return products.sort((a, b) => a.price - b.price);
+    } else if (sortOrder === "highToLow") {
+      return products.sort((a, b) => b.price - a.price);
+    }
+    return products; // Default order if no sort is selected
+  };
+
+  // Apply sorting to the filtered products
+  const sortedProducts = sortProducts([...filterProducts]);
+
   return (
-    <div>
+    <div className="mt-4">
       <h1 className="text-center text-4xl font-semibold">Featured Product</h1>
-      <div className="flex">
-        <div className="w-1/3 pl-6">
+      <div className="sort flex items-center gap-3 justify-end pr-6 mb-3">
+        <p className="text-lg">Sort By</p>
+        <Select
+          className="w-96 mt-2"
+          options={[
+            {value: "lowToHigh", label: "Price: Low to High"},
+            {value: "highToLow", label: "Price: High to Low"},
+          ]}
+          placeholder="Select sort order"
+          onChange={(selectedOption) => setSortOrder(selectedOption.value)}
+          isClearable
+        />
+      </div>
+      <div className="flex gap-4">
+        <div className="w-72 pl-6 fixed">
           <div className="search relative">
             <input
-              className="p-4 w-72 border outline-none rounded-md text-slate-900"
+              className="p-4 w-60 border outline-none rounded-md text-slate-900"
               type="text"
               placeholder="search by product name"
               value={searchQuery}
@@ -47,7 +74,7 @@ const Category = () => {
           <div className="category mt-3">
             <h4 className="text-xl font-semibold">Category</h4>
             <Select
-              className="w-96 mt-2"
+              className="w-60 mt-2"
               options={categoryOptions}
               isClearable
               placeholder="Select a category"
@@ -56,10 +83,10 @@ const Category = () => {
             />
           </div>
         </div>
-        <div className="grid grid-cols-3 gap-4 w-full">
-          {filterProducts.map((product) => (
+        <div className="grid grid-cols-4 gap-4 w-full  ml-72">
+          {sortedProducts.map((product) => (
             <div key={product.id}>
-              <div className="card card-compact bg-base-100 w-96 shadow-xl">
+              <div className="card card-compact bg-base-100 w-[356px] shadow-xl">
                 <figure>
                   <img className="h-[190px]" src={product.image} alt="Shoes" />
                 </figure>
