@@ -1,12 +1,17 @@
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import useAuth from "../hooks/useAuth";
-// import {LuUserCircle} from "react-icons/lu";
-// import {LuUserCircle} from "react-icons/lu";
+import {LuUserCircle} from "react-icons/lu";
 
 const Navbar = () => {
-  const {user} = useAuth();
+  const {user, logOut} = useAuth();
   console.log(user?.displayName);
+  console.log(user?.photoURL);
+  const navigate = useNavigate();
 
+  const handleLogout = async () => {
+    await logOut();
+    navigate("/signUp");
+  };
   return (
     <div className="navbar h-20 bg-black md:px-6 shadow-lg fixed z-10">
       <div className="flex-1">
@@ -23,30 +28,25 @@ const Navbar = () => {
             role="button"
             className="btn btn-ghost btn-circle avatar"
           >
-            {/* <div className="w-10 rounded-full">
-              {user.photoURL ? (
+            <div className="w-10 rounded-full">
+              {user?.photoURL ? (
                 <img src={user.photoURL} alt="image" />
               ) : (
-                <LuUserCircle className="h-full w-full" />
+                <LuUserCircle className="h-full text-white w-full" />
               )}
-            </div> */}
+            </div>
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+            className="menu btn  menu-sm dropdown-content bg-base-100 rounded-md z-[1] mt-3 w-24 p-2 shadow"
           >
-            <li>
-              <a className="justify-between">
-                Profile
-                <span className="badge">New</span>
-              </a>
-            </li>
-            <li>
-              <a>Settings</a>
-            </li>
-            <li>
-              <a>Logout</a>
-            </li>
+            {user ? (
+              <button onClick={handleLogout}>Log Out</button>
+            ) : (
+              <Link to="signIn">
+                <button>Login</button>
+              </Link>
+            )}
           </ul>
         </div>
       </div>

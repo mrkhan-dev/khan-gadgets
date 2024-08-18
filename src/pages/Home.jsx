@@ -10,6 +10,8 @@ const Home = () => {
   const [selectedBrand, setSelectedBrand] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [sortOrder, setSortOrder] = useState(null);
+  const [minPrice, setMinPrice] = useState(0);
+  const [maxPrice, setMaxPrice] = useState(1000); // Adjust max value as needed
 
   // pagination
   const [productsCount] = UseProductsCount();
@@ -76,7 +78,11 @@ const Home = () => {
     const matchesSearchQuery = product.productName
       .toLowerCase()
       .includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesBrand && matchesSearchQuery;
+    const matchesPriceRange =
+      product.price >= minPrice && product.price <= maxPrice;
+    return (
+      matchesCategory && matchesBrand && matchesSearchQuery && matchesPriceRange
+    );
   });
 
   // Sort products based on selected sort order
@@ -102,7 +108,9 @@ const Home = () => {
   return (
     <div>
       <div className="mt-4">
-        <h1 className="text-center text-4xl font-semibold">Featured Product</h1>
+        <h1 className="text-center text-4xl font-semibold mb-2">
+          Featured Product
+        </h1>
         <div className="sort md:flex items-center gap-3 justify-end pr-6 mb-3 border py-2 px-6 mx-6 ">
           <p className="text-lg">Sort By</p>
           <Select
@@ -153,6 +161,33 @@ const Home = () => {
                 onChange={(selectOptions) => setSelectedBrand(selectOptions)}
                 value={selectedBrand}
               />
+            </div>
+            <div className="price-range mt-4 w-60">
+              <h4 className="text-xl font-semibold">Price Range</h4>
+              <div className="flex items-center gap-4 mt-2">
+                <div>
+                  <label>Min: ${minPrice}</label>
+                  <input
+                    type="range"
+                    min="0"
+                    max="1000" // Adjust according to your product price range
+                    value={minPrice}
+                    onChange={(e) => setMinPrice(Number(e.target.value))}
+                    className="range range-info h-4 "
+                  />
+                </div>
+                <div>
+                  <label>Max: ${maxPrice}</label>
+                  <input
+                    type="range"
+                    min="0"
+                    max="1000" // Adjust according to your product price range
+                    value={maxPrice}
+                    onChange={(e) => setMaxPrice(Number(e.target.value))}
+                    className="range range-info h-4"
+                  />
+                </div>
+              </div>
             </div>
           </div>
           <div className="grid grid-cols-4 gap-4 w-full  ml-72">
