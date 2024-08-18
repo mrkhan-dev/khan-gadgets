@@ -111,10 +111,10 @@ const Home = () => {
         <h1 className="text-center text-4xl font-semibold mb-2">
           Featured Product
         </h1>
-        <div className="sort md:flex items-center gap-3 justify-end pr-6 mb-3 border py-2 px-6 mx-6 ">
+        <div className="sort md:flex items-center gap-3 justify-end pr-6 mb-3 md:border md:py-2 px-6 md:mx-6 ">
           <p className="text-lg">Sort By</p>
           <Select
-            className="w-96 mt-2"
+            className="md:w-96 mt-2"
             options={[
               {value: "lowToHigh", label: "Price: Low to High"},
               {value: "highToLow", label: "Price: High to Low"},
@@ -127,10 +127,10 @@ const Home = () => {
           />
         </div>
         <div className="md:flex gap-4">
-          <div className="w-72 pl-6 fixed">
+          <div className="md:w-72 w-full pl-6 md:fixed">
             <div className="search relative">
               <input
-                className="p-4 w-60 border outline-none rounded-md text-slate-900"
+                className="p-4 md:w-60 w-full  border outline-none rounded-md text-slate-900"
                 type="text"
                 placeholder="search by product name"
                 value={searchQuery}
@@ -190,10 +190,10 @@ const Home = () => {
               </div>
             </div>
           </div>
-          <div className="grid grid-cols-4 gap-4 w-full  ml-72">
+          <div className="md:grid md:grid-cols-4 gap-4 w-full  md:ml-72">
             {sortedProducts.map((product) => (
               <div key={product.id}>
-                <div className="card card-compact bg-base-100 w-[356px] shadow-xl">
+                <div className="card mb-2 card-compact bg-base-100 md:w-[356px] shadow-xl">
                   <figure>
                     <img
                       className="h-[190px]"
@@ -215,13 +215,15 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className=" pagination gap-2 md:flex justify-center mt-4 mb-4">
+      <div className=" pagination gap-2 flex justify-center mt-4 mb-4">
         <button onClick={handlePrevBtn} className="btn">
           Prev
         </button>
         {pages.map((page) => (
           <button
-            className={(currentPage === page && "bg-orange-500 btn") || "btn"}
+            className={
+              (currentPage === page && "bg-orange-500 btn") || "btn gap-ml-2"
+            }
             onClick={() => setCurrentPage(page)}
             key={page}
           >

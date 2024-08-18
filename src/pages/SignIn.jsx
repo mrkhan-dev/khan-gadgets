@@ -21,11 +21,9 @@ const SignIn = () => {
         <div className="container flex items-center justify-center mt-16 px-6 mx-auto">
           <form onSubmit={handleSignIn} className="w-full max-w-md">
             <div className="flex justify-center mx-auto">
-              <img
-                className="w-auto h-7 sm:h-8"
-                src="https://merakiui.com/images/logo.svg"
-                alt=""
-              />
+              <h1 className="text-4xl text-[#04F300] font-semibold">
+                Khan<span className="text-orange-600">Gadgets</span>
+              </h1>
             </div>
 
             <div className="flex items-center justify-center mt-6">
@@ -99,12 +97,6 @@ const SignIn = () => {
               <button className="w-full px-6 py-3 text-sm font-medium tracking-wide text-white capitalize transition-colors duration-300 transform bg-blue-500 rounded-lg hover:bg-blue-400 focus:outline-none focus:ring focus:ring-blue-300 focus:ring-opacity-50">
                 Sign Up
               </button>
-
-              <div className="mt-6 text-center ">
-                <a href="#" className="text-sm text-blue-500 hover:underline">
-                  Already have an account?
-                </a>
-              </div>
             </div>
           </form>
         </div>
