@@ -1,11 +1,25 @@
-import {NavLink} from "react-router-dom";
+import {NavLink, useNavigate} from "react-router-dom";
+import useAuth from "../hooks/useAuth";
 
 const SignIn = () => {
+  const {signIn} = useAuth();
+  const navigate = useNavigate();
+
+  const handleSignIn = async (e) => {
+    e.preventDefault();
+    const form = e.target;
+    const email = form.email.value;
+    const password = form.password.value;
+
+    await signIn(email, password);
+    navigate("/");
+  };
+
   return (
     <div>
       <section className="bg-white">
         <div className="container flex items-center justify-center mt-16 px-6 mx-auto">
-          <form className="w-full max-w-md">
+          <form onSubmit={handleSignIn} className="w-full max-w-md">
             <div className="flex justify-center mx-auto">
               <img
                 className="w-auto h-7 sm:h-8"
@@ -54,6 +68,7 @@ const SignIn = () => {
 
               <input
                 type="email"
+                name="email"
                 className="block w-full py-3 text-gray-700 bg-white border rounded-lg px-11    focus:border-blue-400 dark:focus:border-blue-300 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 placeholder="Email address"
               />
@@ -74,6 +89,7 @@ const SignIn = () => {
 
               <input
                 type="password"
+                name="password"
                 className="block w-full px-10 py-3 text-gray-700 bg-white border rounded-lg focus:border-blue-400 focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
                 placeholder="Password"
               />
