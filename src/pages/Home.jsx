@@ -7,6 +7,7 @@ import UseProductsCount from "../hooks/UseProductsCount";
 
 const Home = () => {
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const [selectedBrand, setSelectedBrand] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [sortOrder, setSortOrder] = useState(null);
 
@@ -51,19 +52,31 @@ const Home = () => {
     new Set(allProducts.map((res) => res.categoryName))
   );
 
+  const brands = Array.from(
+    new Set(allProducts.map((res) => res.brandName)) // Assuming 'brandName' is the field for brand
+  );
+
   const categoryOptions = categories.map((category) => ({
     value: category,
     label: category,
+  }));
+
+  const brandOptions = brands.map((brand) => ({
+    value: brand,
+    label: brand,
   }));
 
   const filterProducts = allProducts.filter((product) => {
     const matchesCategory = selectedCategory
       ? product.categoryName === selectedCategory.value
       : true;
+    const matchesBrand = selectedBrand
+      ? product.brandName === selectedBrand.value
+      : true;
     const matchesSearchQuery = product.productName
       .toLowerCase()
       .includes(searchQuery.toLowerCase());
-    return matchesCategory && matchesSearchQuery;
+    return matchesCategory && matchesBrand && matchesSearchQuery;
   });
 
   // Sort products based on selected sort order
@@ -72,6 +85,14 @@ const Home = () => {
       return products.sort((a, b) => a.price - b.price);
     } else if (sortOrder === "highToLow") {
       return products.sort((a, b) => b.price - a.price);
+    } else if (sortOrder === "newest") {
+      return products.sort(
+        (a, b) => new Date(b.dateAdded) - new Date(a.dateAdded)
+      );
+    } else if (sortOrder === "oldest") {
+      return products.sort(
+        (a, b) => new Date(a.dateAdded) - new Date(b.dateAdded)
+      );
     }
     return products; // Default order if no sort is selected
   };
@@ -82,20 +103,22 @@ const Home = () => {
     <div>
       <div className="mt-4">
         <h1 className="text-center text-4xl font-semibold">Featured Product</h1>
-        <div className="sort flex items-center gap-3 justify-end pr-6 mb-3">
+        <div className="sort md:flex items-center gap-3 justify-end pr-6 mb-3 border py-2 px-6 mx-6 ">
           <p className="text-lg">Sort By</p>
           <Select
             className="w-96 mt-2"
             options={[
               {value: "lowToHigh", label: "Price: Low to High"},
               {value: "highToLow", label: "Price: High to Low"},
+              {value: "newest", label: "Newest First"},
+              {value: "oldest", label: "Oldest First"},
             ]}
+            isClearable
             placeholder="Select sort order"
             onChange={(selectedOption) => setSortOrder(selectedOption.value)}
-            isClearable
           />
         </div>
-        <div className="flex gap-4">
+        <div className="md:flex gap-4">
           <div className="w-72 pl-6 fixed">
             <div className="search relative">
               <input
@@ -120,6 +143,17 @@ const Home = () => {
                 value={selectedCategory}
               />
             </div>
+            <div className="category mt-4">
+              <h4 className="text-xl font-semibold">Brand</h4>
+              <Select
+                className="w-60 mt-2"
+                options={brandOptions}
+                isClearable
+                placeholder="Select brand"
+                onChange={(selectOptions) => setSelectedBrand(selectOptions)}
+                value={selectedBrand}
+              />
+            </div>
           </div>
           <div className="grid grid-cols-4 gap-4 w-full  ml-72">
             {sortedProducts.map((product) => (
@@ -134,7 +168,8 @@ const Home = () => {
                   </figure>
                   <div className="card-body">
                     <h2 className="card-title">{product.productName}</h2>
-                    <p>{product.price}</p>
+                    <p className="text-lg">${product.price}</p>
+                    <p className="text-lg">Last Update: {product.dateAdded} </p>
                     <div className="card-actions justify-end">
                       <button className="btn btn-primary">Buy Now</button>
                     </div>
@@ -145,7 +180,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className=" pagination gap-2 flex justify-center mt-4 mb-4">
+      <div className=" pagination gap-2 md:flex justify-center mt-4 mb-4">
         <button onClick={handlePrevBtn} className="btn">
           Prev
         </button>
