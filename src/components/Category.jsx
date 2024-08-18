@@ -1,13 +1,22 @@
 import {useState} from "react";
 import Select from "react-select";
-import UseAllProducts from "../hooks/UseAllProducts";
 import {CiSearch} from "react-icons/ci";
+import UseAxiosPublic from "../hooks/UseAxiosPublic";
+import {useQuery} from "@tanstack/react-query";
 
 const Category = () => {
-  const [allProducts] = UseAllProducts();
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [searchQuery, setSearchQuery] = useState("");
   const [sortOrder, setSortOrder] = useState(null);
+
+  const axiosPublic = UseAxiosPublic();
+  const {data: allProducts = []} = useQuery({
+    queryKey: ["allProducts"],
+    queryFn: async () => {
+      const res = await axiosPublic.get("/allProducts");
+      return res.data;
+    },
+  });
 
   const categories = Array.from(
     new Set(allProducts.map((res) => res.categoryName))
